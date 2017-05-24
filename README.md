@@ -4,6 +4,7 @@ http://ksonnet.heptio.com
 
 ```
 docker pull chadmoon/ksonnet:latest
+docker tag chadmoon/ksonnet:latest ksonnet
 ```
 
 or build
@@ -15,9 +16,10 @@ docker build -t ksonnet .
 ### example usage
 
 ```
-alias ksonnet="docker run --rm -v $PWD:/workdir ksonnet"
+alias ksonnet="docker run --rm -i ksonnet"
 
-ksonnet example.libsonnet
+
+cat example.jsonnet | ksonnet -
 ```
 outputs:
 ```
